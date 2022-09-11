@@ -1,38 +1,127 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  font-family: 'Inter', sans-serif;
+  background-color: #F5F7FB;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn {
+  min-width: 10rem;
+  padding: 1rem;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  background-color: #4D5B9E;
+  border: none;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.btn:hover, .btn:focus{
+  background-color: #6879cf
+}
+
+.intro{
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 0.75rem;
 }
 
-.App-link {
-  color: #61dafb;
+/* QUIZ */
+
+
+.container{
+  max-width: 600px;
+  margin: auto;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.questions{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: #293264;
+}
+
+.question-text{
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.propositions{
+  margin: 2rem 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.proposition{
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #293264;
+  width: 1fr;
+  padding: 0.25rem 1rem;
+  border-radius: 10px;
+}
+
+input[type='radio']{
+  display: none;
+}
+
+.proposition:hover{
+  cursor: pointer;
+}
+
+.--selected{
+  background-color: #D6DBF5;
+  border-color: #D6DBF5;
+  font-weight: 600;
+}
+
+.--right{
+  background-color: #94D7A2;
+  border-color: #94D7A2;
+  font-weight: 600;
+}
+
+.--wrong{
+  background-color: #F8BCBC;
+  border-color: #F8BCBC;
+  color: #7a7e99;
+}
+
+.--not-selected{
+  border-color: #7a7e99;
+  color: #7a7e99;
+}
+
+.result-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.result{
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 700px){
+  .container{
+    padding: 1rem;
   }
-  to {
-    transform: rotate(360deg);
-  }
+  
 }
